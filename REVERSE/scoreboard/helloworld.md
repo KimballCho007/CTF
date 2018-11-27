@@ -1,4 +1,4 @@
-**Scoreboard第38题，Reverse大类第一题**  
+**Scoreboard第38题，Reverse第一题**  
 >附件下载地址：https://hackme.inndy.tw/static/helloworld
 
 Step1:  
