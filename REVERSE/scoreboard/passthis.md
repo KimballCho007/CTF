@@ -70,7 +70,7 @@ LABEL_9:
 
 关键函数在第40行到第55行，byte_404040开始的0xD个字符为：  
 ['0xc1', '0xcb', '0xc6', '0xc0', '0xfc', '0xc9', '0xe8', '0xab', '0xa7', '0xde', '0xe8', '0xf2', '0xa7']  
-使等式`((unsigned __int8)byte_404040[v4] ^ (unsigned __int8)v6) == -121`一直成立（-121即是135）
-等到v6小于0xd时结束，v4是+1增长，v6等于：FLAG{No, You should not pass the flag}
-同时v
-等到v6小于0xd时结束，v4是+1增长，v6等于：FLAG{No, You should not pass the flag}
+使等式`((unsigned __int8)byte_404040[v4] ^ (unsigned __int8)v6) == -121`一直成立（-121即是135）  
+等到v6小于0xd时结束，v4是+1增长，v6等于：FLAG{No, You should not pass the flag}  
+
+如果数据量较大，可通过v6来进行判断，v5=9217，bin(9217) = 0b0b10010000000001,最终的v6只可能等于0、10、13才可能在bittest中通过，因此可以寻找序列中为0、10、13的值。
