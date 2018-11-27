@@ -1,10 +1,12 @@
-#Scoreboard第38题，Reverse大类第一题
-#附件下载地址：https://hackme.inndy.tw/static/helloworld
+Scoreboard第38题，Reverse大类第一题
+附件下载地址：https://hackme.inndy.tw/static/helloworld
 
 Step1:
-file命令查看，helloworld: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=7060d74084170ea3740c4ac90ae27516b426da73, with debug_info, not stripped
+`file命令查看，helloworld: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=7060d74084170ea3740c4ac90ae27516b426da73, with debug_info, not stripped
+`
 
 Step2:
+```
 32位IDA查看main函数代码：
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
@@ -34,6 +36,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   }
   return 0;
 }
+```
 
 Step3:
 很明显输入314159265即可得到flag: FLAG{PI is not a rational number.}
