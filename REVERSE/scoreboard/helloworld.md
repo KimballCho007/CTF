@@ -1,5 +1,5 @@
-Scoreboard第38题，Reverse大类第一题  
-附件下载地址：https://hackme.inndy.tw/static/helloworld
+**Scoreboard第38题，Reverse大类第一题**  
+>附件下载地址：https://hackme.inndy.tw/static/helloworld
 
 Step1:  
 `file命令查看，helloworld: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=7060d74084170ea3740c4ac90ae27516b426da73, with debug_info, not stripped
